@@ -1,84 +1,85 @@
 # Halalithm
 
-**The Trust Algorithm for the Halal Economy**
+Halalithm is a functional web prototype for halal and ethical product intelligence. It demonstrates how a product scanner could combine ingredient signals, certification records, regional context, and clear explanations into a decision-support interface.
 
-AI-powered verification for what billions consume, wear, and trust.
-
----
+Important: this project is a prototype. It is not a fatwa, halal certification authority, or production verification engine. The included data is sample data for software demonstration only.
 
 ## Features
 
-- Barcode Scanner (camera + manual)
-- OCR Ingredient Scanner
-- AI Halal/Haram/Makruh Engine
-- Global Recipe Search
-- YouTube Halal Recipe Integration
-- Scholar & Admin Dashboard
-- SEO-optimized Product Pages
-- Multi-language: English, Arabic, Urdu, Bengali
-- Supabase Database + Auth
+- Product scan form with sample products
+- Transparent rule-based decision engine
+- Region selector for future localization
+- Explainable results with confidence and detected signals
+- Demo dashboard for decision mix and risk signals
+- Clean GitHub-ready structure with documentation and tests
 
----
+## Project Structure
 
-## Tech Stack
-
-| Layer      | Technology                  |
-|------------|-----------------------------|
-| Frontend   | Next.js 14 + React 18       |
-| Styling    | Tailwind CSS                |
-| Database   | Supabase (PostgreSQL)       |
-| OCR        | Tesseract.js                |
-| Deployment | Vercel                      |
-
----
-
-## Quick Start
-
-```bash
-git clone https://github.com/YOUR_USERNAME/halalithm.git
-cd halalithm
-npm install
-cp .env.example .env.local
-# Fill in your Supabase keys in .env.local
-npm run dev
+```text
+halalithm/
+|-- index.html
+|-- package.json
+|-- src/
+|   |-- data/
+|   |   `-- products.js
+|   |-- engine.js
+|   |-- main.js
+|   `-- styles.css
+|-- tests/
+|   `-- engine.test.js
+|-- docs/
+|   `-- ARCHITECTURE.md
+|-- README.md
+|-- LICENSE
+`-- .gitignore
 ```
 
-Open [http://localhost:3000](http://localhost:3000)
+## Run Locally
 
----
+Run with a local web server so the JavaScript modules load correctly:
 
-## Database Setup
+```bash
+npm start
+```
 
-1. Create a project at [supabase.com](https://supabase.com)
-2. Open SQL Editor
-3. Run `supabase/schema.sql`
-4. Run `supabase/seed.sql`
-5. Copy your URL and anon key into `.env.local`
+Then open the local URL shown in your terminal.
 
----
+You can also use any static server, such as VS Code Live Server, GitHub Pages, Netlify, or Vercel.
 
-## Deploy to Vercel
+## Run Tests
 
-1. Push to GitHub
-2. Import repo at [vercel.com](https://vercel.com)
-3. Add environment variables
-4. Click Deploy
+```bash
+npm test
+```
 
----
+The tests check the core decision engine with sample product scenarios.
 
-## Roadmap
+## How The Demo Works
 
-- [ ] Real camera barcode scanner (ZXing)
-- [ ] OpenFoodFacts API integration
-- [ ] AI ingredient classifier (LLM)
-- [ ] React Native mobile app
-- [ ] Scholar verification board
-- [ ] Government halal certification API
-- [ ] Chrome extension
-- [ ] Electron desktop app
+The prototype uses a small rule-based engine:
 
----
+1. Normalize the product name.
+2. Match the product against sample data.
+3. Detect ingredient risk signals such as gelatin, alcohol, enzymes, and ambiguous flavorings.
+4. Combine signals and sample certification records into a provisional decision.
+5. Display the reasoning so users can see why a result was produced.
+
+## What Would Be Needed For Production
+
+A real Halalithm platform would need:
+
+- Verified ingredient and supplier database
+- Trusted halal certification authority integrations
+- Region-specific rulings and governance
+- Scholar review workflows
+- Audit logs and evidence trails
+- Human escalation for uncertain results
+- Strong disclaimers and user safety controls
+
+## Deployment
+
+Because this is a static web project, it can be deployed with GitHub Pages, Netlify, Vercel, or any static hosting provider.
 
 ## License
 
-MIT © 2026 Halalithm
+MIT License. See `LICENSE`.

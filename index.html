@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Halalithm is a transparent prototype for halal and ethical product intelligence."
+    />
+    <title>Halalithm | Ethical Product Intelligence Prototype</title>
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Halalithm home">
+        <span class="brand-mark">H</span>
+        <span>Halalithm</span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#scanner">Scanner</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#architecture">Architecture</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Prototype decision support</p>
+          <h1>Halal and ethical product intelligence, explained clearly.</h1>
+          <p class="lead">
+            Halalithm demonstrates how a product scan could combine ingredient
+            signals, certification records, regional context, and transparent
+            reasoning into one readable decision.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#scanner">Try product scan</a>
+            <a class="button secondary" href="#architecture">View system model</a>
+          </div>
+        </div>
+
+        <aside class="signal-panel" aria-label="Live system summary">
+          <div class="panel-header">
+            <span>Trust engine</span>
+            <span class="status-dot">Prototype</span>
+          </div>
+          <div class="signal-grid">
+            <div>
+              <span class="metric">18</span>
+              <span class="metric-label">seed products</span>
+            </div>
+            <div>
+              <span class="metric">42</span>
+              <span class="metric-label">ingredient signals</span>
+            </div>
+            <div>
+              <span class="metric">4</span>
+              <span class="metric-label">regions</span>
+            </div>
+            <div>
+              <span class="metric">0</span>
+              <span class="metric-label">official rulings</span>
+            </div>
+          </div>
+          <p class="notice">
+            This demo is educational software. It is not a fatwa, certification,
+            or religious authority.
+          </p>
+        </aside>
+      </section>
+
+      <section id="scanner" class="section two-column">
+        <div>
+          <p class="eyebrow">Product scanner</p>
+          <h2>Run an explainable demo scan</h2>
+          <p class="section-copy">
+            Enter a product name or choose a sample. The engine returns a
+            provisional decision based on the sample data and clearly shows the
+            reasoning used.
+          </p>
+        </div>
+
+        <form id="scanForm" class="scanner" autocomplete="off">
+          <label for="productInput">Product name</label>
+          <div class="input-row">
+            <input
+              id="productInput"
+              name="product"
+              type="text"
+              placeholder="Try: Oreo, gelatin candy, almond milk"
+              required
+            />
+            <button class="button primary" type="submit">Scan</button>
+          </div>
+
+          <label for="regionSelect">Region context</label>
+          <select id="regionSelect" name="region">
+            <option value="global">Global</option>
+            <option value="bangladesh">Bangladesh</option>
+            <option value="usa">United States</option>
+            <option value="uae">UAE</option>
+          </select>
+
+          <div class="sample-row" aria-label="Sample products">
+            <button type="button" data-sample="Oreo cookies">Oreo</button>
+            <button type="button" data-sample="Gelatin candy">Gelatin candy</button>
+            <button type="button" data-sample="Almond milk">Almond milk</button>
+            <button type="button" data-sample="Energy drink">Energy drink</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="section result-layout" aria-live="polite">
+        <article id="resultCard" class="result-card empty">
+          <p class="eyebrow">Scan result</p>
+          <h2>Waiting for product input</h2>
+          <p>
+            Results will appear here with confidence, detected signals, and
+            recommended next steps.
+          </p>
+        </article>
+
+        <article class="explain-card">
+          <h3>How the prototype decides</h3>
+          <ol id="decisionSteps">
+            <li>Normalize the product name and selected region.</li>
+            <li>Match known sample products and ingredient signals.</li>
+            <li>Score risk, certification presence, and uncertainty.</li>
+            <li>Return a transparent recommendation with limitations.</li>
+          </ol>
+        </article>
+      </section>
+
+      <section id="dashboard" class="section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Dashboard</p>
+            <h2>Compliance intelligence view</h2>
+          </div>
+          <span class="badge">Demo data</span>
+        </div>
+
+        <div class="dashboard-grid">
+          <article class="dashboard-card">
+            <h3>Decision mix</h3>
+            <div class="bar-list" id="decisionMix"></div>
+          </article>
+          <article class="dashboard-card">
+            <h3>Risk signals</h3>
+            <ul class="signal-list" id="riskSignals"></ul>
+          </article>
+          <article class="dashboard-card wide">
+            <h3>API preview</h3>
+            <pre><code>POST /v1/check
+{
+  "product": "Oreo cookies",
+  "region": "global",
+  "mode": "explainable"
+}</code></pre>
+          </article>
+        </div>
+      </section>
+
+      <section id="architecture" class="section">
+        <p class="eyebrow">Architecture</p>
+        <h2>From prototype to real verification platform</h2>
+        <div class="pipeline">
+          <div>Product input</div>
+          <div>Ingredient parser</div>
+          <div>Certification graph</div>
+          <div>Scholar review layer</div>
+          <div>Explainable decision</div>
+        </div>
+        <p class="section-copy">
+          A production version would require verified certification data,
+          region-specific scholarly governance, audit logs, supplier records,
+          and review by qualified Islamic authorities.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Halalithm prototype</span>
+      <span>Built for transparent portfolio demonstration</span>
+    </footer>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
